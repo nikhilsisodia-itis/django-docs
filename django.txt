@@ -1,0 +1,27 @@
+Starting date & time- 02-Jun-2025 16:09 hours.
+
+1. What is DJango?
+- Django is a python-based web framework.
+- It is open-source.
+
+2. What is a Framework?
+- Framework is a pre-built architecture.
+- In terms of Web Framework, the project comes with a pre-built architecture: like a detailed and well-structured project architecture, specific directories for specific operations or functionalities.
+- Comes with its own pre-built functionalities like: user authentication, data encryption, routing, etc.
+
+3. What are Libraries?
+- Libraries are pre-written code.
+- Used to perform specific operations or to assist in performing the specified function.
+
+4. DJango data encryption method:
+- Django uses PBKDF2 (Password-Based Key Derivation Function 2) for password hashing.
+- It is a key stretching algorithm that applies a hash function to the password along with a salt.
+
+5. Whay use DJango?
+- Django comes with a built-in admin interface, which makes it easy to manage application data.
+- It has a robust ORM (Object-Relational Mapping) system that allows developers to interact with databases using Python code instead of SQL.
+- Django has a strong community and extensive documentation, making it easier for developers to find help and resources.
+- It follows the "Don't Repeat Yourself" (DRY) principle, promoting reusability of code and reducing redundancy.
+- Django uses DRY (Don't Repeat Yourself) principle, which means it encourages the reuse of code and reduces redundancy.
+- Highly scalable and can handle high traffic loads efficiently.
+- Used by- Instagram, Pinterest, Spotify, and many other popular websites.
