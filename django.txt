@@ -162,3 +162,17 @@ manage.py
 - It stand for Web Server Gateway Interface.
 
 - The `manage.py` file is a command-line utility that allows you to interact with your Django project, such as running the development server, creating applications, and managing the database.
+
+IV. 'settings.py' in-depth:
+
+19. The setting.py file:
+- BASE_DIR: Point to the root directory of your Djnago project.
+- SECRET_KET: A cryptograpich strong random string used by Django for various security-related operations.
+- DEBUG = True: Used to check errors during development.
+- ALLOWED_HOST = []: You can specify the domain name of your server, where you want to run your project.
+- INSTALLED_APPS: Defines which applications are enabled and available for your Django project.
+- MIDDLEWARE: Consist of middlewares that performs operations like authentication, security, etc.
+- ROOT_URLCONF: Instructs the python interpreter to use URLs from the urls.py file in the project directory.
+- TEMPLATES: Used for rendering the front-end part of the project.
+- DATABASE: Used to set the database to be used by the project.
+- AUTH_PASSWORD_VALIDATORS: Built-in password validators.
