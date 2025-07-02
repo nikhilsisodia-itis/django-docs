@@ -107,3 +107,58 @@ II. Introduction to Django- Part 2:
   pip freeze | grep Django
 
 - This will display the version of Django that has been installed in your virtual environment.
+
+III. DJango Project Setup and Introduction to DJango Project Structure:
+
+16. Creating a Django Project:
+- To create a new Django project, use the command:
+
+  django-admin startproject <project_name>
+
+- Replace `<project_name>` with the desired name for your project.
+- This command will create a new directory with the specified project name, containing the necessary files and directories for a Django project.
+
+17. Running the Django Development Server:
+- To run the Django development server, navigate to the project directory and use the command:
+
+  python manage.py runserver
+
+- This command starts the development server, allowing you to access your Django application in a web browser at `http://127.0.0.1:8000/'.
+
+- You can specify a different port by appending `:<port_number>` to the command, for example:
+
+  python manage.py runserver 8080
+
+- This will run the server on port 8080 instead of the default port 8000.
+
+18. Project Directory Structure:
+- After creating a Django project, the directory structure will look like this:
+
+your_directory_to_use_venv_&_django/
+<env_name>
+<project_name>/
+        __init__.py
+        settings.py
+        urls.py
+        asgi.py
+        wsgi.py
+manage.py
+
+- The `__init__.py` file indicates that the directory is a Python package. 
+- It tells the python interpreter that it is not a normal directory but a python package.
+- It helps in importing modules from the package.
+
+- The `settings.py` file contains the configuration settings for the Django project.
+- It includes settings for database connections, static files, templates, middleware, and other project-specific configurations.
+
+- The `urls.py` file defines the URL routing for the project.
+- It maps URLs to views, allowing you to define how different URLs should be handled by your application.
+
+- The `asgi.py` and `wsgi.py` files are entry points for ASGI and WSGI servers, respectively.
+- The `asgi.py` file is used for deploying the Django application on an ASGI-compatible web server.
+- It stands for Asynchronous Server Gateway Interface.
+
+- The `wsgi.py` file is used for deploying the Django application on a WSGI-compatible web server.
+- It stand for Web Server Gateway Interface.
+
+- The `manage.py` file is a command-line utility that allows you to interact with your Django project, such as running the development server, creating applications, and managing the database.
