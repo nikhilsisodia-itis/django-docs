@@ -176,3 +176,19 @@ IV. 'settings.py' in-depth:
 - TEMPLATES: Used for rendering the front-end part of the project.
 - DATABASE: Used to set the database to be used by the project.
 - AUTH_PASSWORD_VALIDATORS: Built-in password validators.
+
+V. How Django works?
+
+20. Which software design pattern is used by Django?
+- Django used MVT model.
+- M: Model: Responsible for all database related operations.
+  V: View: Acts as the bridge between the models and the templates. Views receives a request, and returns a response.
+  T: Template: Display users that data, basically what the users see- the 'UI'.
+
+21. How MVT works?
+- User makes a request.
+- URL routing: Django checks for the matching requested URL pattern, and than select which view function to call.
+- View: Contains all the business logics, and tell the model what operation(s) to perform with the data.
+- Model: Perform the operation on the data in the database as per the user's request and send back the information to the view.
+- Template: Template combines the processed data received by view, sent by the model with the html markup.
+- HTTP Response: The rendered HTML is sent back to the user as an HTTP response, and the final results are displayed to the user according the user's request.
