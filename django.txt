@@ -398,3 +398,27 @@ class Employee(models.Model):
   admin.site.register(Employee)
 
 - This will make the `Employee` model available in the Django Admin Panel, allowing you to perform CRUD operations on it.
+
+XI. What are Media files, and how to create and use them in Django?
+
+38. What are Media Files in Django?
+- Media files are user-uploaded files, such as images, videos, documents, etc.
+- They are different from static files, which are typically used for CSS, JavaScript, and other assets that do not change.
+- Media files are stored in a separate directory and can be managed through Django's file handling capabilities.
+
+39. Creating and Configuring Media Files in settings.py:
+- Create a directory named `media` in your project root directory to store media files.
+- In your `settings.py` file, add the following configuration:
+
+  MEDIA_URL = '/media/'
+  MEDIA_ROOT = BASE_DIR / 'media'
+
+- This configuration tells Django where to find media files and how to serve them.
+- The `MEDIA_URL` is the URL prefix for accessing media files, while `MEDIA_ROOT` is the file system path where media files are stored.
+- Now, update your project's `urls.py` file to serve media files during development:
+
+  from django.conf import settings
+  from django.conf.urls.static import static
+  urlpatterns = [
+      ...
+  ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
