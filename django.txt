@@ -246,3 +246,42 @@ def my_view(request):
     return render(request, 'my_template.html')
     
 - This will render the `my_template.html` file and return it as an HTTP response.
+
+VII. How to create and use static files in Django?
+
+26. Creating a Static Directory:
+- In your Django application directory, create a new directory named `static`.
+- Inside the `static` directory, you can create subdirectories for different types of static files, such as `css`, `js`, and `images`.
+- For example, you can create the following structure:  
+your_app/
+    static/
+        css/
+            styles.css
+        js/
+            scripts.js
+        images/
+            logo.png
+
+27. Configuring Static Files in settings.py:
+- Open your `settings.py` file and add the following configuration:
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR /'static'
+STATICFILES_DIRS = [
+    '<project_name>/static'
+]
+
+- This configuration tells Django where to find static files and how to serve them.
+
+28. Using Static Files in Templates:
+- In your HTML templates, you can use the `{% static %}` template tag to reference static files.
+- First, make sure to load the staticfiles template tag library at the top of your template:
+
+{% load static %}
+- Then, you can use the `{% static %}` tag to link to your static files. For example:
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+<script src="{% static 'js/scripts.js' %}"></script>
+<img src="{% static 'images/logo.png' %}" alt="Logo">
+
+- This will generate the correct URL for your static files based on the configuration in `settings.py`.
