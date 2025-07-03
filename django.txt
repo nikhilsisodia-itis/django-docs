@@ -285,3 +285,51 @@ STATICFILES_DIRS = [
 <img src="{% static 'images/logo.png' %}" alt="Logo">
 
 - This will generate the correct URL for your static files based on the configuration in `settings.py`.
+
+VIII. What are Apps in Django and how to create them?
+
+29. What is an App in Django?
+- An app in Django is a self-contained module that encapsulates a specific functionality or feature of your project.
+- Each app can have its own models, views, templates, and static files.
+- Apps can be reused across different projects, making it easier to manage and maintain your code.
+
+30. Creating a Django App:
+- To create a new app in your Django project, navigate to the project directory and run the command:
+
+  python manage.py startapp <app_name>
+
+- Replace `<app_name>` with the desired name for your app.
+- This command will create a new directory with the specified app name, containing the necessary files and directories for a Django app.
+
+31. App Directory Structure:
+- After creating a Django app, the directory structure will look like this:
+
+your_project/
+<app_name>/
+    migrations/
+    __init__.py
+    admin.py  
+    apps.py
+    models.py
+    tests.py
+    views.py
+
+- The `migrations` directory contains migration files that track changes to the app's models.
+- The `__init__.py` file indicates that the directory is a Python package.
+- The `admin.py` file is used to register models with the Django admin interface.
+- The `apps.py` file contains the configuration for the app.
+- The `models.py` file defines the data models for the app.
+- The `tests.py` file is used for writing tests for the app.
+- The `views.py` file contains the view functions for handling requests and returning responses.
+
+32. Registering the App in settings.py:
+- To make Django aware of your new app, you need to register it in the `INSTALLED_APPS` list in your `settings.py` file.
+- Open `settings.py` and add your app to the `INSTALLED_APPS` list:
+
+INSTALLED_APPS = [
+    ...
+    '<app_name>',
+]
+
+- Replace `<app_name>` with the name of your app.
+- This tells Django to include your app in the project and allows you to use its models, views, and templates.
