@@ -354,3 +354,47 @@ IX. Django Admil Panel:
 
 - Open your web browser and go to `http://127.0.0.1:8000/admin/`.
 - Log in using the superuser credentials you created earlier.
+
+X. What is Model and how to create and register it?
+
+35. What is a Model in Django?
+- A model in Django is a Python class that represents a database table.
+- It defines the structure of the data, including fields and their types, as well as any relationships between different models.
+- Models are used to interact with the database, allowing you to create, read, update, and delete records.
+
+36. Creating a Model:
+- To create a model, open the `models.py` file in your Django app directory.
+- Define a class that inherits from `django.db.models.Model`.
+- Each field in the model is defined as a class attribute, using Django's field types.
+- For example, to create a simple `Employee` model:
+
+from django.db import models
+class Employee(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    date_of_birth = models.DateField()
+    position = models.CharField(max_length=100)
+
+37. Creating migration and migrating the model:
+- After defining your model, you need to create a migration file that describes the changes to the database schema.
+- Run the following command in your project directory:
+
+  python manage.py makemigrations
+
+- This command generates a migration file in the `migrations` directory of your app.
+- The migration file contains the necessary instructions to create the corresponding database table for your model.
+- To apply the migration and create the table in the database, run the following command:
+
+  python manage.py migrate  
+
+- This command applies all pending migrations, creating the necessary database tables and relationships based on your models.
+- After running the migration, register your model in the Django Admin Panel to manage it through the admin interface.
+- Open the `admin.py` file in your app directory and register your model:
+
+  from django.contrib import admin
+  from .models import Employee
+
+  admin.site.register(Employee)
+
+- This will make the `Employee` model available in the Django Admin Panel, allowing you to perform CRUD operations on it.
