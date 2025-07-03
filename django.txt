@@ -192,3 +192,57 @@ V. How Django works?
 - Model: Perform the operation on the data in the database as per the user's request and send back the information to the view.
 - Template: Template combines the processed data received by view, sent by the model with the html markup.
 - HTTP Response: The rendered HTML is sent back to the user as an HTTP response, and the final results are displayed to the user according the user's request.
+
+VI. How to create views and templates in Django?
+
+22. Creating a View:
+- Create a new file named `views.py` in your Django application directory.
+- Define a view function that takes a request object as an argument and returns an HTTP response.
+
+- For example, in `views.py`:
+
+from django.http import HttpResponse
+def my_view(request):
+    return HttpResponse("Hello, this is my view!")
+  
+- This view function returns a simple HTTP response with the text "Hello, this is my view!".
+
+23. Mapping URLs to Views:
+- In your Django application, go to the `urls.py` file.
+- Import the view function you created in `views.py`.
+- Add a URL pattern that maps a specific URL to your view function.
+
+- For example, in `urls.py`:  
+
+from django.urls import path
+from .views import my_view
+
+urlpatterns = [
+    path('my-view/', my_view, name='my_view'),
+]
+
+- This URL pattern maps the URL `/my-view/` to the `my_view` function.
+
+24. Creating a Template:
+- Create a new directory named `templates` in your Django application directory.
+- Inside the `templates` directory, create an HTML file for your template, for example, `my_template.html`.
+- In `my_template.html`, you can write your HTML code, for example:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Template</title>
+</head>
+<body>
+    <h1>Hello, this is my template!</h1>
+</body>
+</html>
+
+25. Rendering a Template in a View:
+- In your view function, you can render the template using Django's `render` function.
+
+from django.shortcuts import render
+def my_view(request):
+    return render(request, 'my_template.html')
+    
+- This will render the `my_template.html` file and return it as an HTTP response.
