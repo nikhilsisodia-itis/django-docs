@@ -333,3 +333,24 @@ INSTALLED_APPS = [
 
 - Replace `<app_name>` with the name of your app.
 - This tells Django to include your app in the project and allows you to use its models, views, and templates.
+
+IX. Django Admil Panel:
+
+33. What is Django Admin Panel?
+- Django Admin Panel is a built-in web-based interface provided by Django for managing application data.
+- It allows you to perform CRUD (Create, Read, Update, Delete) operations on your models without writing any additional code.
+- The admin panel is automatically generated based on the models defined in your Django app.
+
+34. Accessing the Django Admin Panel:
+- To access the Django Admin Panel, you need to create a superuser account first.
+- Run the following command in your project directory:
+
+  python manage.py createsuperuser
+
+- Follow the prompts to enter a username, email address, and password for the superuser account.
+- After creating the superuser, you can start the Django development server:
+
+  python manage.py runserver
+
+- Open your web browser and go to `http://127.0.0.1:8000/admin/`.
+- Log in using the superuser credentials you created earlier.
